@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IoSearchSharp } from "react-icons/io5";
+import { IoPersonOutline, IoPersonSharp, IoSearchSharp, IoSettingsOutline } from "react-icons/io5";
 import useConversation from "../../zustand/useConversation";
 import useGetConversations from "../../hooks/useGetConversations";
 import toast from "react-hot-toast";
@@ -23,7 +23,14 @@ const SearchInput = () => {
 			setSearch("");
 		} else toast.error("No such user found!");
 	};
+
+	const handleProfile = (e) => {
+		e.preventDefault();
+		setSelectedConversation(null);
+	}
+
 	return (
+		<div className="flex gap-2">
 		<form onSubmit={handleSubmit} className='flex items-center gap-2'>
 			<input
 				type='text'
@@ -36,6 +43,8 @@ const SearchInput = () => {
 				<IoSearchSharp className='w-6 h-6 outline-none' />
 			</button>
 		</form>
+		<button onClick={handleProfile} className='btn btn-circle text-white'><IoPersonSharp className='w-6 h-6 outline-none'/></button>
+		</div>
 	);
 };
 export default SearchInput;
