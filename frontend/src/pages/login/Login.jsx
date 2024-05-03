@@ -14,7 +14,9 @@ const Login = () => {
 	};
 
 	return (
+		<>
 		<div className="flex w-4/5">
+			
 			<section className='py-10 w-3/4 mx-auto'>
 				<h1 className='text-6xl font-semibold text-white text-left'>Welcome to Chat Inn!💬</h1>
 				<p className="pt-10 text-xl w-3/4 text-left font-normal">Whether you're catching up with family, sharing stories with friends, or networking with colleagues, Chat Inn is your cozy corner to relax and talk!</p>
@@ -66,6 +68,7 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };
 export default Login;
@@ -110,4 +113,3 @@ export default Login;
 // 		</div>
 // 	);
 // };
-// export default Login;
