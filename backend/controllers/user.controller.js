@@ -4,6 +4,9 @@ export const getUsersForSidebar = async (req, res) => {
 	try {
 		const loggedInUserId = req.user._id;
 
+		console.log("from user.controller.js")
+		console.log("loggedInUserId: ", loggedInUserId)
+
 		const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
 
 		res.status(200).json(filteredUsers);
