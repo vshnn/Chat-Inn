@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 body {
-	/* background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.png"); */
-	/* background-color: #0b1120; */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -58,3 +56,17 @@ body {
 		transform: translate3d(4px, 0, 0);
 	}
 }
+
+body > .skiptranslate {
+	display: none;
+  }
+
+  .goog-te-banner-frame.skiptranslate {
+	display: none !important;
+  }
+
+  @media print {
+	#google_translate_element {
+	  display: none;
+	}
+  }
