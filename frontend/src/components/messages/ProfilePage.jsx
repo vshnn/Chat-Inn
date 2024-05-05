@@ -36,14 +36,16 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <div className="w-full max-w-md mx-auto rounded-lg shadow-md p-6">
+    <div className="container mx-auto">
+      <div className="w-full max-w-md mx-auto rounded-lg shadow-md px-6">
         <h2 className="text-2xl font-semibold text-center">Edit Profile</h2>
 
         <form onSubmit={handleChanges}>
           <div className="w-12 rounded-full mx-auto mt-3">
             <img src={authUser.profilePic} alt="user avatar" />
           </div>
+          <div className="font-bold text-white text-center text-xl pt-2">{authUser.fullName}</div>
+  
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Full Name</span>
