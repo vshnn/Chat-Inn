@@ -1,10 +1,40 @@
+
 import { useState,useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import usePostProfileChanges from "../../hooks/usePostProfileChanges";
 import {toast} from "react-hot-toast";
 
+
 const ProfilePage = () => {
   const { authUser } = useAuthContext();
+  const [fullName, setFullName] = useState(authUser.fullName);
+  const [username, setUsername] = useState(authUser.username);
+  const [password, setPassword] = useState("");
+
+  const [changes, setChanges] = useState(null);
+
+  const postProfileChangesResult = usePostProfileChanges(authUser._id, changes, authUser.profilePic);
+
+  console.log(authUser._id);
+
+  useEffect(() => {
+    if (postProfileChangesResult.error) {
+      // handle error
+    } else if (postProfileChangesResult) {
+      // handle success
+    }
+  }, [postProfileChangesResult]);
+
+  const handleChanges = (e) => {
+    e.preventDefault();
+    setChanges({
+      fullName: fullName,
+      username: username,
+      password: password,
+    });
+    toast.success("Profile updated successfully");
+  };
+
   const [fullName, setFullName] = useState(authUser.fullName);
   const [username, setUsername] = useState(authUser.username);
   const [password, setPassword] = useState("");
