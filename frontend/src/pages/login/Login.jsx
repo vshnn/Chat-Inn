@@ -15,9 +15,9 @@ const Login = () => {
 
 	return (
 		<>
-		<div className="flex w-4/5">
+		<div className=" w-4/5 md:flex">
 			
-			<section className='py-10 w-3/4 mx-auto'>
+			<section className='w-3/4 mx-auto mt-28'>
 				<h1 className='text-6xl font-semibold text-white text-left'>Welcome to Chat Inn!💬</h1>
 				<p className="pt-10 text-xl w-3/4 text-left font-normal">Whether you're catching up with family, sharing stories with friends, or networking with colleagues, Chat Inn is your cozy corner to relax and talk!</p>
 				<button className="rounded-full p-3 mt-5 border-2 cursor-pointer"><Link to="/signup">Get Started</Link></button>
